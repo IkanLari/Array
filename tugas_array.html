@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    Array Filter
+    <div id="demo"></div>
+    <br>
+    Array forEach
+    <div id="foreach"></div>
+    <br>
+    Array Join
+    <div id="yunani"></div>
+    <br>
+    Array Map
+    <div id="map"></div>
+    <br>
+    Array Pop
+    <div id="pop1"></div>
+    <div id="pop2"></div>
+    <br>
+    Array Push
+    <div id="push1"></div>
+    <div id="push2"></div>
+    <br>
+    Array Sort
+    <div id="sort1"></div>
+    <div id="sort2"></div>
+    <br>
+    Array Method
+    <br>
+    <script>
+        // Array Method adalah struktur data yang digunakan untuk menyimpan sekumpulan data dalam satu variabel
+        let buah = ["Pisang", "Apel", "Jambu", "Nanas"];
+        
+        for(let i = 0; i < buah.length; i++) {
+            document.writeln(buah[i])
+        }
+        "<br>"
+        // Filter digunakan untuk membuat array baru yang sudah melewati seleksi
+        let tanggal = [31, 20, 18, 12, 25, 28];
+
+        document.getElementById("demo").innerHTML = tanggal.filter(tengatWaktu);
+
+        function tengatWaktu(tanggal) {
+            return tanggal >= 19
+        }
+
+        // forEach digunakan untuk memanggilsebuah function dari masing masing array
+        let text = "";
+        let kendaraan = ["Kereta", "Sepeda", "Mobil"];
+        kendaraan.forEach(myFunction1);
+
+        document.getElementById("foreach").innerHTML = text;
+ 
+        function myFunction1(item, index) {
+            text += index + ": " + item + "<br>"; 
+        }
+
+        // join digunakan untuk mengubah koma pada array
+        let dewa = ["Zeus", "Posseidon", "Hades", "Kratos"];
+        document.getElementById("yunani").innerHTML = dewa.join(" Ω ");
+
+        // map digunakan untuk melakukan penyelesaian matematika
+        let angka = [65, 44, 12, 4];
+        let newArray = angka.map(myFunction);
+
+        document.getElementById("map").innerHTML = newArray;
+
+        function myFunction(num) {
+        return num * 10;
+}
+        // pop digunakan untuk menghilangkan element terakhir dari sebuah array
+        let hewan = ["Kucing", "Anjing", "Sapi", "Jeruk"];
+        document.getElementById("pop1").innerHTML = hewan;
+        hewan.pop();
+        document.getElementById("pop2").innerHTML = hewan;
+
+        // push digunakan untuk menambahkan element pada array
+        let planetDalam = ["Merkurius", "Venus", "Bumi"]
+        document.getElementById("push1").innerHTML = planetDalam;
+        planetDalam.push("Mars")
+        document.getElementById("push2").innerHTML = planetDalam;
+
+        // sort digunakan untuk mengurutkan element berdasarkan dengan alphabet
+        let benda = ["TV", "Meja", "Laptop", "Handphone", "Kasur"]
+        document.getElementById("sort1").innerHTML = benda
+        benda.sort()
+        document.getElementById("sort2").innerHTML = benda
+
+        // for in statement mengulangi semua properti string yang dapat dihitung dari suatu objek, termasuk properti yang dapat dihitung yang diwariskan
+        document.writeln("<br>", "<br>", "Array For in")
+        let person = { name: 'Udin', age: 25, live: 'Bogor' };
+        for (let prop in person) {
+        document.writeln("<br>", prop + ': ' + person[prop]);
+        }
+
+        // for of
+        document.writeln("<br>", "<br>", "Array For in")
+        let numbers = [1, 2, 3, 4, 5];
+        for (let num of numbers) {
+        document.writeln("<br>", num);
+        }
+    </script>
+</body>
+</html>
